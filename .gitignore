@@ -1,0 +1,16 @@
+# File hệ thống
+.DS_Store
+Thumbs.db
+
+# Thư viện, biến môi trường
+node_modules/
+.env
+
+# Cấu hình editor
+.vscode/
+
+# Log
+*.log
+
+# Tài liệu nội bộ
+ROADMAP.md

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#171412" />
+    <title>Login · Soundspace</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;1,400&family=DM+Mono&family=Instrument+Sans:wght@400;600&display=swap" rel="stylesheet" />
+  </head>
+  <body class="login-page">
+    <main class="login">
+      <a class="login-brand" href="index.html" aria-label="Soundspace home"><span></span><span></span></a>
+      <p class="note">welcome back</p>
+      <h1>Sign in to <em>Soundspace</em></h1>
+      <form id="form-login">
+        <div class="input">
+          <label for="username-input">Username</label>
+          <input type="text" id="username-input" name="username" autocomplete="username" placeholder="Your display name" required />
+        </div>
+        <div class="input">
+          <label for="password-input">Password</label>
+          <input type="password" id="password-input" name="password" autocomplete="current-password" placeholder="Password" required />
+        </div>
+        <button class="login-submit" type="submit">Sign in</button>
+        <p id="login-status" role="status" aria-live="polite" hidden></p>
+      </form>
+      <p class="login-back"><a href="index.html">Back to Soundspace</a></p>
+    </main>
+    <script type="module" src="js/login.js"></script>
+  </body>
+</html>
+ 

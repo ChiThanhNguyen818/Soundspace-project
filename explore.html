@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#171412" />
+    <title>Explore — Soundspace</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;1,400&family=DM+Mono&family=Instrument+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body data-page="explore" data-search-placeholder="Search tracks or artists">
+    <div id="root">
+      <aside id="sidebar"></aside>
+      <div id="content">
+        <header></header>
+        <main>
+          <div id="top-content">
+            <div>
+              <p class="note">find your next favorite</p>
+              <h1>Explore <em>music</em></h1>
+            </div>
+            <div>
+              <p id="chart-note">
+                Search the iTunes catalog for tracks, artists, and new sounds.
+                Preview availability depends on the track.
+              </p>
+            </div>
+          </div>
+          <a
+            class="explore-store-link"
+            href="https://www.apple.com/music/"
+            target="_blank"
+            rel="noreferrer"
+            >Open Apple Music ↗</a
+          >
+          <p
+            id="search-status"
+            class="search-status"
+            role="status"
+            aria-live="polite"
+          >
+            Search for a song or artist to get started.
+          </p>
+          <ol
+            id="search-results"
+            class="search-results"
+            aria-label="Search results"
+          ></ol>
+        </main>
+        <footer><p>© 2026 Soundspace — Listen closely</p></footer>
+      </div>
+    </div>
+
+    <dialog id="name-dialog" class="modal" aria-labelledby="name-dialog-title">
+      <form id="name-form" method="dialog">
+        <h2 id="name-dialog-title">New playlist</h2>
+        <label for="name-input">Name</label>
+        <input id="name-input" name="name" maxlength="60" autocomplete="off" required />
+        <p id="name-error" class="modal-error" role="alert" hidden></p>
+        <div class="modal-actions">
+          <button type="button" id="name-cancel">Cancel</button>
+          <button type="submit" class="primary" id="name-submit">Create</button>
+        </div>
+      </form>
+    </dialog>
+    <script type="module" src="js/explore.js"></script>
+  </body>
+</html>

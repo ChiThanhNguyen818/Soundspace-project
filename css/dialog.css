@@ -1,0 +1,121 @@
+/* Dialog component.
+   Phụ thuộc các biến khai báo trong :root của style.css
+   (--bg, --text, --text-muted, --border, --surface2, --accent, --font-heading).
+   Luôn link file này SAU style.css. */
+
+.modal {
+    padding: 0; /* padding đặt ở form để click ra ngoài vẫn nhận ra là click backdrop */
+    width: min(92vw, 400px);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--bg);
+    color: var(--text);
+    box-shadow: 0 24px 80px rgba(0, 0, 0, .5);
+}
+.modal[open] {
+    animation: modalIn .18s ease-out;
+}
+.modal::backdrop {
+    background: rgba(0, 0, 0, .6);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+.modal[open]::backdrop {
+    animation: backdropIn .18s ease-out;
+}
+.modal form {
+    display: grid;
+    gap: 12px;
+    padding: 24px;
+}
+.modal h2 {
+    margin: 0 0 4px;
+    font-family: var(--font-heading);
+    font-size: 26px;
+    font-weight: 400;
+}
+.modal p {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 14px;
+    line-height: 1.5;
+}
+.modal label {
+    color: var(--text-muted);
+    font-size: 13px;
+}
+.modal input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    outline: none;
+    background: var(--surface2);
+}
+.modal input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(196, 123, 80, .12);
+}
+.modal input[aria-invalid="true"] {
+    border-color: #f29b7b;
+}
+.modal .modal-error {
+    color: #f29b7b;
+    font-size: 13px;
+}
+.modal .modal-error[hidden] {
+    display: none;
+}
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: 8px;
+}
+.modal-actions button {
+    padding: 8px 16px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: transparent;
+    transition: .2s ease;
+}
+.modal-actions button:hover {
+    border-color: var(--accent);
+    background: var(--surface-hover);
+}
+.modal-actions button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+.modal-actions .primary {
+    border-color: var(--accent);
+    background: var(--accent);
+    color: var(--bg);
+    font-weight: 600;
+}
+.modal-actions .primary:hover {
+    background: var(--accent);
+    filter: brightness(1.1);
+}
+.modal-actions .danger {
+    border-color: #f29b7b;
+    background: #f29b7b;
+    color: var(--bg);
+    font-weight: 600;
+}
+.modal-actions .danger:hover {
+    background: #f29b7b;
+    filter: brightness(1.1);
+}
+/* Khóa cuộn trang phía sau khi dialog mở */
+body:has(.modal[open]) {
+    overflow: hidden;
+}
+@keyframes modalIn {
+    from { opacity: 0; transform: translateY(8px) scale(.98); }
+    to   { opacity: 1; transform: none; }
+}
+@keyframes backdropIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}

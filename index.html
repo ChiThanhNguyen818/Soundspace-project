@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Soundspace</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;1,400&family=DM+Mono&family=Instrument+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body data-page="home" data-search-placeholder="Search tracks, artists, moods">
+    <div id="root">
+      <aside id="sidebar"></aside>
+      <div id="content">
+        <header></header>
+        <main>
+          <div id="top-content">
+            <div>
+              <p class="note">weekly chart • updated monday</p>
+              <h1>Most <em>Popular</em></h1>
+            </div>
+            <div>
+              <p id="chart-note">
+                The ten records the world kept on repeat this week, ranked by
+                streams and sorted by the sound you are in the mood for
+              </p>
+            </div>
+          </div>
+          <div id="songs-topic">
+            <button type="button" class="is-active">All</button>
+            <button type="button">Electronic</button>
+            <button type="button">Hip Hop</button>
+            <button type="button">Jazz</button>
+            <button type="button">Indie</button>
+            <button type="button">Country</button>
+            <button type="button">Ambient</button>
+            <button type="button">Soul</button>
+          </div>
+          <div id="charts">
+            <div id="chart-grid">
+              <span>#</span>
+              <span>Track</span>
+              <span>Genre</span>
+              <span>Plays</span>
+              <span>Time</span>
+            </div>
+            <ol id="chart-list">
+              <li class="chart-row">
+                <span class="rank">01</span>
+                <div class="track-info">
+                  <div class="cover"></div>
+                  <div>
+                    <p class="song-title">Track name</p>
+                    <p class="song-artist">Artist name</p>
+                  </div>
+                </div>
+                <span class="genre">Genre</span>
+                <span class="plays">0.0M</span>
+                <span class="time">0:00</span>
+                <button
+                  class="fav-btn"
+                  type="button"
+                  aria-pressed="false"
+                  aria-label="Add to favorites"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="20"
+                    height="20"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8L12 2.5z"
+                    />
+                  </svg>
+                </button>
+              </li>
+            </ol>
+          </div>
+        </main>
+        <footer>
+          <div id="footer-content">
+            <p class="note">made for you</p>
+            <h2>Recommended <em>listening</em></h2>
+          </div>
+          <div id="recommend-songs">
+            <article class="song-card">
+              <div class="cover"></div>
+              <p class="song-title">Track name</p>
+              <p class="song-artist">Artist name</p>
+            </article>
+          </div>
+          <p>© 2026 Soundspace - Listen closely</p>
+        </footer>
+      </div>
+    </div>
+    <script type="module" src="js/chart.js"></script>
+  </body>
+</html>
+ 

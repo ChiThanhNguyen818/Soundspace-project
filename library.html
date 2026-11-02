@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Library · Soundspace</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/dialog.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;1,400&family=DM+Mono&family=Instrument+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body data-page="library" data-search-placeholder="Search your library">
+    <div id="root">
+      <aside id="sidebar"></aside>
+      <div id="content">
+        <header></header>
+        <main>
+          <div id="top-content">
+            <div>
+              <p class="note">saved by you • synced today</p>
+              <h1>Your <em>Library</em></h1>
+            </div>
+            <div>
+              <p id="chart-note">
+                Everything you have saved, in one place. Browse your tracks,
+                collections, favorites and playlists
+              </p>
+            </div>
+          </div>
+          <dl id="library-stats">
+            <div><dt>Tracks</dt><dd id="stat-tracks">0</dd></div>
+            <div><dt>Favorites</dt><dd id="stat-favorites">0</dd></div>
+            <div><dt>Total time</dt><dd id="stat-time">0 min</dd></div>
+            <div><dt>Top genre</dt><dd id="stat-genre">—</dd></div>
+          </dl>
+          <div id="songs-topic">
+            <button type="button" class="is-active" data-view="all">All collections</button>
+            <button type="button" data-view="favorites">Favorites</button>
+            <button type="button" data-view="playlists">Playlists</button>
+            <button type="button" id="new-playlist-btn" hidden>+ New playlist</button>
+          </div>
+          <div id="library-grid" hidden></div>
+          <p id="playlist-hint" class="note" hidden>Select a playlist to see its tracks</p>
+          <div id="charts">
+            <div id="chart-grid">
+              <span>#</span>
+              <span>Track</span>
+              <span>Genre</span>
+              <span>Plays</span>
+              <span>Time</span>
+              <span class="playlist-action-heading" hidden>Manage</span>
+            </div>
+            <ol id="chart-list">
+              <li class="chart-row">
+                <span class="rank">01</span>
+                <div class="track-info">
+                  <div class="cover"></div>
+                  <div>
+                    <p class="song-title">Track name</p>
+                    <p class="song-artist">Artist name</p>
+                  </div>
+                </div>
+                <span class="genre">Genre</span>
+                <span class="plays">0.0M</span>
+                <span class="time">0:00</span>
+                <button
+                  class="fav-btn"
+                  type="button"
+                  aria-pressed="false"
+                  aria-label="Add to favorites"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="20"
+                    height="20"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8L12 2.5z"
+                    />
+                  </svg>
+                </button>
+              </li>
+            </ol>
+          </div>
+        </main>
+        <footer>
+          <p>© 2026 Soundspace - Listen closely</p>
+        </footer>
+      </div>
+    </div>
+    <!--Dialog create playlist-->
+    <dialog id="name-dialog" class="modal" aria-labelledby="name-dialog-title">
+      <form method="dialog">
+        <h2 id="name-dialog-title">New playlist</h2>
+        <label for="name-input">Name</label>
+        <input id="name-input" maxlength="60" autocomplete="off" required />
+        <p class="modal-error" role="alert" hidden></p>
+        <div class="modal-actions">
+          <button type="button" data-cancel>Cancel</button>
+          <button type="submit" class="primary">Create</button>
+        </div>
+      </form>
+    </dialog>
+    <!--Dialog delete playlist-->
+    <dialog id="confirm-dialog" class="modal" aria-labelledby="confirm-dialog-title">
+      <form method="dialog">
+        <h2 id="confirm-dialog-title">Delete playlist</h2>
+        <p></p>
+        <div class="modal-actions">
+          <button type="button" data-cancel>Cancel</button>
+          <button type="submit" class="danger">Delete</button>
+        </div>
+      </form>
+    </dialog>
+
+    <script type="module" src="js/library.js"></script>
+  </body>
+</html>
+ 
